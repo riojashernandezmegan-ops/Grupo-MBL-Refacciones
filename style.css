@@ -1,0 +1,198 @@
+/* --- Estilos Generales --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Navegación --- */
+nav {
+    background: #000;
+    padding: 15px;
+    position: sticky; /* Se queda fijo al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Corregido de 'font-size: bold' */
+}
+
+/* --- Header y Logo --- */
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.logo { /* Agregado el punto '.' */
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* --- Secciones --- */
+.banner { /* Agregado el punto '.' */
+    background: #d62828;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.productos, .galeria, .contacto { /* Agregados puntos */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* --- Tarjetas de Productos --- */
+.contenedor-productos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.tarjeta-producto {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* --- Galería --- */
+.contenedor-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contenedor-galeria img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contenedor-galeria img:hover {
+    transform: scale(1.08);
+}
+
+/* --- Formulario --- */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Un poco más ancho para mejor lectura */
+    margin: 20px auto;
+    gap: 15px;
+}
+
+.formulario input, .formulario textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.formulario button {
+    padding: 12px;
+    border: none;
+    background: #111;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background: #d62828;
+    transform: translateY(-2px);
+}
+
+/* --- Botón WhatsApp --- */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 12px; /* O usa un icono de imagen aquí */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .banner {
+        padding: 40px 10px;
+    }
+    .tarjeta-producto {
+        width: 100%;
+    }
+}
